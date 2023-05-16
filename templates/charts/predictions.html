@@ -1,0 +1,52 @@
+{% extends 'data/base.html' %}
+{% block body_block %}
+
+<div style="text-align:center">
+    <h1>
+        Predictions on Cryptocurrency
+    </h1>
+    <div class = "container-fluid">
+        <div class="container-fluid mb-4">
+            <center>
+                <div>
+                    <form action="" method="get">
+                        <select name="crypto" style="padding-left: 20px; padding-right: 20px; padding-top: 5px; padding-bottom: 5px">
+                            <option selected disabled>Choose Cryptocurrency:</option>
+                            <option value="BTC-USD">Bitcoin</option>
+                            <option value="ETH-USD">Ethereum</option>
+                            <option value="USDT-USD">Tether</option>
+                            <option value="BNB-USD">BNB</option>
+                            <option value="USDC-USD">USD Coin</option>
+                            <option value="XRP-USD">XRP</option>
+                            <option value="BUSD-USD">Binance USD</option>
+                            <option value="ADA-USD">Cardano</option>
+                            <option value="DOGE-USD">Dogecoin</option>
+                            <option value="MATIC-USD">Polygon</option>
+                            <option value="SOL-USD">Dai</option>
+                            <option value="DOT-USD">Litecoin</option>
+                            <option value="LTC-USD">Polkdot</option>
+                            <option value="SHIB-USD">Solana</option>
+                            <option value="AVAX-USD">TRON</option>
+                            <option value="TRON-USD">Shiba Inu</option>
+                            <option value="DAO-USD">Uniswap</option>
+                            <option value="UNI-USD">Avalanche</option>
+                            <option value="ATOM-US">Cosmos</option>
+                            <option value="WBTC-USD">Wrapped Bitcoin</option>
+                        </select>
+                        <button type="submit" name="submit"
+                        style="padding-left: 10px; padding-right: 10px; padding-top: 3px; padding-bottom: 3px; background-color:cornflowerblue; color: white; border: 1px solid cornflowerblue"
+                        >Filter</button>
+                    </form>
+                </div>
+            </center>
+            {% autoescape off %}
+            {{plot_div | safe}}
+            {{plot_div2 | safe}}
+            {{plot_div3 | safe}}
+            {{plot_div4 | safe}}
+            {{plot_div5 | safe}}
+            {% endautoescape %}
+        </div>
+    </div>
+</div>       
+{% endblock %} 

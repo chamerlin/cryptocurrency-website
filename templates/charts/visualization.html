@@ -1,0 +1,48 @@
+{% extends 'data/base.html' %}
+{% block body_block %}
+
+<div style="text-align:center">
+    <h1>
+        Charts on Cryptocurrency
+    </h1>
+    <div class = "container-fluid">
+        <div class="container-fluid mb-4">
+            <div class="row">
+                <div class = "col-12">
+                    <img src="{% url 'data:percentage-per-hour' %}" alt="Percetage Per Hour" />
+                </div>  
+            </div>
+            <div class="row">
+                <div>
+                    <img src="{% url 'data:market-cap' %}" alt="Market Cap" />
+                </div>  
+            </div>
+            <div class="row">
+                <div>
+                    <img src="{% url 'data:circulating-supply' %}" alt="Circulating Supply" />
+                </div>  
+            </div>
+            <div class="row">
+                <div class = "col-12">
+                    <img src="{% url 'data:trading-volume' %}" alt="Circulating Supply" />
+                </div>  
+            </div>
+            <div class="row">
+                <div class = "col-12">
+                    <img src="{% url 'data:price' %}" alt="Price" />
+                </div>  
+            </div>
+            <div class="row">
+                <div class = "col-12">
+                    <img src="{% url 'data:vol-and-price' %}" alt="Scatter of Trading Volume and Price" />
+                </div>  
+            </div>
+            <div class="row">
+                <div class = "col-12">
+                    <img src="{% url 'data:market-and-price' %}" alt="Scatter of Market Cap and Price" />
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>       
+{% endblock %}     

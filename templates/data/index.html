@@ -1,0 +1,87 @@
+{% extends 'data/base.html' %}
+{% block body_block %}
+
+<div>
+    <center>
+        <h1>
+            Data Table
+        </h1>
+    </center>
+    <div class="container-fluid">
+        <div class="container-fluid">
+            <center>
+                <div style="margin: 20px">
+                    <form action="" method="get">
+                        <select name="sundays" style="padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px">
+                            <option selected disabled>Choose Date:</option>
+                            {% for sunday in sundays %}
+                            <option value="{{sunday}}">{{sunday}}</option>
+                            {% endfor %}
+                        </select>
+                        <button type="submit" name="submit" 
+                        style="padding-left: 10px; padding-right: 10px; padding-top: 3px; padding-bottom: 3px; background-color:cornflowerblue; color: white; border: 1px solid cornflowerblue">
+                            Filter
+                        </button>
+                    </form>
+                </div>
+                <table border="2" style="margin-bottom: 70px;">
+                    <thead>
+                        <tr>
+                            {% for title in tableData.columns %}
+                            <td 
+                                style="padding-top: 10px;
+                                        padding-bottom: 10px;
+                                        padding-left: 20px;
+                                        padding-right: 20px;
+                                        border-width: 2px;
+                                        background-color: aliceblue;">
+                                {{title}}
+                            </td>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for index, row in tableData.iterrows %}
+                        <tr>
+                            {% for data in row %}
+                            {% if "-" in data %}
+                                <td 
+                                    style="padding-top: 10px;
+                                            padding-bottom: 10px;
+                                            padding-left: 20px;
+                                            padding-right: 20px;
+                                            border-width: 2px;
+                                            color:red;">
+                                    {{ data }}
+                                </td>
+                            {% elif "%" in data %}
+                                <td 
+                                    style="padding-top: 10px;
+                                            padding-bottom: 10px;
+                                            padding-left: 20px;
+                                            padding-right: 20px;
+                                            border-width: 2px;
+                                            color:rgb(12, 224, 12);">
+                                    {{ data }}
+                                </td>
+                            {% else %}
+                                <td 
+                                    style="padding-top: 10px;
+                                            padding-bottom: 10px;
+                                            padding-left: 20px;
+                                            padding-right: 20px;
+                                            border-width: 2px;">
+                                    {{data}}
+                                </td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </center>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
