@@ -15,4 +15,4 @@ Migrations of database will be performed.
 Runs the app in the browser.\
 Open [http://127.0.0.1:8000/](http://127.0.0.1:8000/) to view it in your browser.
 
-The page will reload when you make changes.\
+The page will reload when you make changes.
