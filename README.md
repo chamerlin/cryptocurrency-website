@@ -1,8 +1,8 @@
 # cryptocurrency-website
 
-Before you run it, please activate your python virtual environment
+Before you run it, please activate your python virtual environment.
 
-##Available Scripts
+## Available Scripts
 
 In the project directory, you can run:
 
